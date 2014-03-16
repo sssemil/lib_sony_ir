@@ -11,7 +11,7 @@
 
 #define SLEEPTIME 2000
 
-JNIEXPORT jint JNICALL Java_com_buzz_bee_openir_IRMainActivity_startIR
+JNIEXPORT jint JNICALL Java_com_sssemil_sonyirremote_ir_ir_startIR
   (JNIEnv * je, jobject jo){
 
    int status = IRpowerOn(1);
@@ -36,7 +36,7 @@ JNIEXPORT jint JNICALL Java_com_buzz_bee_openir_IRMainActivity_startIR
 }
 
 
-JNIEXPORT jint JNICALL Java_com_buzz_bee_openir_IRMainActivity_stopIR
+JNIEXPORT jint JNICALL Java_com_sssemil_sonyirremote_ir_ir_stopIR
   (JNIEnv * je, jobject jo){
 
    usleep(SLEEPTIME*10);
@@ -47,7 +47,7 @@ JNIEXPORT jint JNICALL Java_com_buzz_bee_openir_IRMainActivity_stopIR
 
 }
 
-JNIEXPORT jint JNICALL Java_com_buzz_bee_openir_IRMainActivity_learnKey
+JNIEXPORT jint JNICALL Java_com_sssemil_sonyirremote_ir_ir_learnKey
   (JNIEnv * je, jobject jo, jstring js){
 
   const char *filename = (*je)->GetStringUTFChars(je, js, 0);
@@ -62,7 +62,7 @@ JNIEXPORT jint JNICALL Java_com_buzz_bee_openir_IRMainActivity_learnKey
 }
 
 
-JNIEXPORT jint JNICALL Java_com_buzz_bee_openir_IRMainActivity_sendKey
+JNIEXPORT jint JNICALL Java_com_sssemil_sonyirremote_ir_ir_sendKey
   (JNIEnv * je, jobject jo, jstring js){
 
   const char *filename = (*je)->GetStringUTFChars(je, js, 0);
